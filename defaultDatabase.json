@@ -1,0 +1,56 @@
+{
+    "tables": {
+        "Schnittblumen": {
+            "schema": {
+                "id": "INTEGER NOT NULL PRIMARY KEY",
+                "name": "TEXT NOT NULL",
+                "description": "BLOB",
+                "price": "INTEGER NOT NULL",
+                "stock": "INTEGER NOT NULL"
+            },
+            "data": [
+                {
+                    "name": "Tulpe",
+                    "description": "Dies ist eine Tulpe",
+                    "price": 130,
+                    "stock": 500
+                },
+                {
+                    "name": "Rose",
+                    "description": "Dies ist eine Rose",
+                    "price": 230,
+                    "stock": 20
+                }
+            ]
+        },
+        "Gartenpflanzen": {
+            "schema": {
+                "id": "INTEGER NOT NULL PRIMARY KEY",
+                "name": "TEXT NOT NULL",
+                "description": "BLOB",
+                "price": "INTEGER NOT NULL",
+                "stock": "INTEGER NOT NULL"
+            },
+            "data": [
+                {
+                    "name": "Bux",
+                    "description": "Dies ist eine Tulpe",
+                    "price": 130,
+                    "stock": 500
+                },
+                {
+                    "name": "Rose",
+                    "description": "Dies ist eine Rose",
+                    "price": 230,
+                    "stock": 20
+                }
+            ]
+        },
+        "Kakteen": {},
+        "Orchideen": {},
+        "Zimmerpflanzen": {},
+        "Pflanzenschalen": {},
+        "Zwiebeln": {},
+        "Bäume": {}
+    }
+}

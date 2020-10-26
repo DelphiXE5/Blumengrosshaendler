@@ -1,0 +1,28 @@
+{
+  "name": "blumengrosshaendler",
+  "version": "1.0.0",
+  "description": "API Service for SWT",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js",
+    "server": "nodemon index.js --database=refresh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DelphiXE5/Blumengrosshaendler.git"
+  },
+  "author": "Ron Gruse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DelphiXE5/Blumengrosshaendler/issues"
+  },
+  "homepage": "https://github.com/DelphiXE5/Blumengrosshaendler#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
