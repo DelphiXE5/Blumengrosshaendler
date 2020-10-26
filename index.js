@@ -61,39 +61,38 @@ refreshDatabase = () => {
     })
 }
 
-db.serialize(() => {
-    let routes;
-    db.all("select name from sqlite_master where type='table'", (err, routes) => {
-        let catalog = []
-        // Add routing for every database
-        routes.forEach(route => {
-            for (const name of Object.values(route)) {
-                catalog.push(name);
-                app.get(`/${name}`, (req, res) => {
-                    res.setHeader('Content-Type', 'application/json');
-                    res.json({
-                        name: {
-                            "Tulpen": 2,
-                            "Rosen": 24
-                        }
-                    })
-                })
-            }
-        })
 
-        // Create Catalog for dynamic routing 
-        app.get("/", (req, res) => {
-            res.setHeader('Content-Type', 'application/json');
-            res.json({
-                "Catalog": catalog
+db.all("select name from sqlite_master where type='table'", (err, routes) => {
+    let catalog = []
+    // Add routing for every database
+    routes.forEach(route => {
+        for (const name of Object.values(route)) {
+            catalog.push(name);
+            app.get(`/${name}`, (req, res) => {
+                res.setHeader('Content-Type', 'application/json');
+                res.json({
+                    name: {
+                        "Tulpen": 2,
+                        "Rosen": 24
+                    }
+                })
             })
+        }
+    })
+
+    // Create Catalog for dynamic routing 
+    app.get("/", (req, res) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.json({
+            "Catalog": catalog
         })
     })
 })
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-    if (process.argv.filter(x => x.match(/--database*/g))[0].replace("--database=", "") == "refresh") {
+    const arg = process.argv.filter(x => x.match(/--database*/g))[0];
+    if (arg && arg.replace("--database=", "") == "refresh") {
         console.log("Refreshing Database....");
         refreshDatabase();
         console.log("Database refreshed");

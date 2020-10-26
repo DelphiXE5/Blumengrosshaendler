@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "node index.js",
+    "fill": "node index.js --database=refresh",
     "server": "nodemon index.js --database=refresh"
   },
   "repository": {
