@@ -70,12 +70,10 @@ db.all("select name from sqlite_master where type='table'", (err, routes) => {
             catalog.push(name);
             app.get(`/${name}`, (req, res) => {
                 res.setHeader('Content-Type', 'application/json');
-                res.json({
-                    name: {
-                        "Tulpen": 2,
-                        "Rosen": 24
-                    }
-                })
+                console.log(`SELECT * FROM ${name};`);
+                db.all(`SELECT * FROM ${name};`, [], (err, result) => {
+                    res.json(result);
+                });
             })
         }
     })
