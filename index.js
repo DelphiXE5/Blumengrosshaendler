@@ -87,6 +87,10 @@ db.all("select name from sqlite_master where type='table'", (err, routes) => {
     })
 })
 
+app.get("/cart", (res, req) => {
+    
+})
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
     const arg = process.argv.filter(x => x.match(/--database*/g))[0];
