@@ -46,7 +46,15 @@
                 }
             ]
         },
-        "Kakteen": {},
+        "Kakteen": {
+            "schema": {
+                "id": "INTEGER NOT NULL PRIMARY KEY",
+                "name": "TEXT NOT NULL",
+                "description": "BLOB",
+                "price": "INTEGER NOT NULL",
+                "stock": "INTEGER NOT NULL"
+            }
+        },
         "Orchideen": {},
         "Zimmerpflanzen": {},
         "Pflanzenschalen": {},
