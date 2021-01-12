@@ -6,7 +6,7 @@ const port = 3000;
 app.use(express.json());
 
 const sqlite = require("sqlite3").verbose();
-const db = new sqlite.Database("./db/plants.db", (err) => {
+const db = new sqlite.Database("./plants.db", (err) => {
     if (err) {
         console.log("Database error: ", err);
     }
