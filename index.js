@@ -2,6 +2,20 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+//ORM Import
+const {Sequelize} = require('sequelize');
+const orm = new Sequelize({
+    dialect:'sqlite',
+    storage: './db/plants.db'
+})
+
+require('./models/plants')(orm);
+
+orm.sync().then(
+    
+);
+
+
 const sqlite = require("sqlite3").verbose();
 const db = new sqlite.Database('./db/plants.db', (err) => {
     if (err) {

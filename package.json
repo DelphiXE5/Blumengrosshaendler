@@ -4,9 +4,7 @@
   "description": "API Service for SWT",
   "main": "index.js",
   "scripts": {
-    "test": "test",
     "start": "node index.js",
-    "fill": "node index.js --database=refresh",
     "server": "nodemon index.js --database=refresh"
   },
   "repository": {
@@ -21,6 +19,7 @@
   "homepage": "https://github.com/DelphiXE5/Blumengrosshaendler#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "sequelize": "^6.3.5",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
